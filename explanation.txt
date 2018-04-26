@@ -1,0 +1,34 @@
+Submitter name:Piyush Pilaniya
+Roll No.:2016csb1049
+Course:CSL202
+=================================
+1. What does this program do
+	The python program will take an input of yaml file which it will parse through and will store the fact in the facts_and_rules.pl name file. Then the python file will write the rules which are required to process the queries given in the question. 
+ 
+--------------------------------------------------------------------
+2. A description of how this program works (i.e. its logic)
+	I have used Yaml Parser. For that you first need to install this library then import it. The parser stores the yaml file in the form of dictionary which we can access and read using same techniques. Now when reading the dictionary I have open the file name facts_and_rules.pl in which I will write along with the reading from the dictionary.Then there are three ways - OS,machine, softwareApp. But there is a problem with yaml parser the order in which the details are stored - 
+
+For OS -->>  version,'name','limits','provides_libs','arch','id'
+For Machine -->> 'disk','OS','RAM','type','CPU','id'
+For software app -->> 'name', 'requires_software', 'requires_hardware','id'
+
+
+
+---------------------------------------------------------------------
+3. How to compile and run this program
+
+	python logic_app.py
+	You will come up with an interface.
+
+---------------------------------------------------------------------
+4. What all files are included in this package?
+
+1.)  facts_gen.py  ----> This file read the yaml file and then generate facts_and_rule.pl 
+
+2.)  facts_and_rules.py  ----> This file is generated as a result of facts_gen.py , this contains all the facts and rules.Facts are read from yaml file and the rules are generated as required by query.
+
+3.)  logic_app.py  ---> This file is used for invoking process and it is the main user interface. It will invoke the prolog file named facts_and_rules.pl
+
+4.)  new.yaml  ----> The same file given in the question but with the tabs removed as yaml parser do not parse files with tab (\t).
+
